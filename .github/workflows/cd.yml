@@ -1,5 +1,12 @@
 name: Deploy React App to GitHub Pages
-on: [push, pull_request]
+
+on:
+  push:
+    branches:
+      - main  # Rama fuente del proyecto sin construir
+  pull_request:
+    branches:
+      - main  # Rama fuente del proyecto sin construir
 
 jobs:
   cd:
@@ -11,10 +18,10 @@ jobs:
         node: [22]
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup node env
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node }}
@@ -25,8 +32,9 @@ jobs:
       - name: Build the app
         run: yarn build
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          publish_branch: gh-pages 
