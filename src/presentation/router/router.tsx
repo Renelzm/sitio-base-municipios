@@ -1,4 +1,4 @@
-import { Navigate, createHashRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import { ContactoPage } from "../pages/ContactoPage";
 import { LandingPage } from "../pages/LandingPage";
 import { SitiosEnlace } from "../pages/SitiosEnlace";
@@ -53,7 +53,7 @@ export const menuRoutes = [
   
 ]
 
-export const router = createHashRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
@@ -63,7 +63,7 @@ export const router = createHashRouter([
           element: route.element
         })),
         {
-          path: '',
+          path: '*',
           element: <Navigate to={ menuRoutes[0].path } />
         }
   
