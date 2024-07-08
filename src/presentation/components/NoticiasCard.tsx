@@ -15,7 +15,7 @@ interface NoticiasCardProps {
 export const NoticiasCard: React.FC<NoticiasCardProps> = ({ title = "Nota", descripcion = "...", img = "https://significado.com/wp-content/uploads/not.jpg", date = "??/??/????", to = "/noticias"}) => {
   return (
     <>
-<Col span={6} xs={{ span: 24 }} md={{ span: 12 }} lg={{ span: 12 }} xl={{ span: 6}} 
+<Col span={12} xs={{ span: 24 }} md={{ span: 12 }} lg={{ span: 12 }} xl={{ span: 8}} xxl={{ span: 6 }}
 style={{marginTop: 20}}>
 <Flex justify="center" >
 <Card
