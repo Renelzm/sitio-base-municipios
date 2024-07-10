@@ -37,12 +37,28 @@ const items: TabsProps["items"] = [
     icon: <PlusCircleTwoTone twoToneColor="#236487" style={{ fontSize: "25px" }}/>,
     disabled: false
   },
-];import { useEffect, useState } from "react";
-import { db } from "../../firebase.js";
-import { collection, getDocs } from "firebase/firestore";
+];
 
 export const TramitesPage = () => {
+  const screens = useBreakpoint();
+
+
+
   return (
-    <div>TramitesPage</div>
-  )
-}
+    <>
+      <Flex justify="center">
+        <Title level={1}>Trámites</Title>
+      </Flex>
+      <Divider/>
+
+      <Tabs
+        defaultActiveKey="1"
+        items={items}
+        onChange={onChange}
+        tabPosition={ screens.xs ? "top" : "left"}
+         type="card"
+         size="small"     
+      />
+    </>
+  );
+};
