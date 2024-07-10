@@ -1,6 +1,8 @@
 import { Card, Col, Flex, Typography } from 'antd'
 import Meta from 'antd/es/card/Meta'
 const { Text } = Typography;
+import { useNavigate } from 'react-router-dom';
+
 interface NoticiasCardProps {
     title?: string;
     descripcion?: string;
@@ -10,13 +12,15 @@ interface NoticiasCardProps {
   }
 
 export const NoticiasCard: React.FC<NoticiasCardProps> = ({ title = "Nota", descripcion = "...", img = "https://significado.com/wp-content/uploads/not.jpg", date = "??/??/????", to = "/noticias"}) => {
+  
+  const navigate = useNavigate();
   return (
     <>
 <Col span={12} xs={{ span: 24 }} md={{ span: 12 }} lg={{ span: 12 }} xl={{ span: 8}} xxl={{ span: 6 }}
 style={{marginTop: 20}}>
 <Flex justify="center" >
 <Card
-  onClick={ () =>{window.location.href = `${to}/${title}`}}
+  onClick={ () => navigate(`${to}/${title}` )}
   hoverable
   style={{ width: 340, padding: 2, background: "#001529",borderRadius: 40 }}
   cover={<img alt="imagen nota" src={img} style={{ width: '100%', height: 250, objectFit: 'cover', borderRadius: 40, padding:4}} />}

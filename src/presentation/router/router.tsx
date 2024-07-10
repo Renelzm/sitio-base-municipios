@@ -70,10 +70,6 @@ export const router = createHashRouter([
       ],
       
     },
-    {
-      path: '*',
-      element: <Navigate to={ menuRoutes[0].path } />
-    },
    
 ]);
 
