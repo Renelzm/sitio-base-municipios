@@ -1,30 +1,32 @@
-# React + TypeScript + Vite
+# Páginas Municipales
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## PARA ENTIDADES MUNICIPALES SIN WEB OFFICIAL
 
-Currently, two official plugins are available:
+Esta aplicación esta diseñada con React y Vite, con la finalidad de servir como sitio base para todas las entiodades que no cuenten con equipamiento ni infraestructura para albergar sus sitios web.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Requerimientos iniciales
 
-## Expanding the ESLint configuration
+- Logotipo de la institución
+- Proporcionar o crear correo de  gmail de la institución
+- Nombre completo y oficial de la institución
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Pasos de instalación
 
-- Configure the top-level `parserOptions` property like this:
+1. Clonar o instalar desde el repositorio
+2. Ejecutar el comando:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+    ```bash
+    npm install
+    ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+3. Correr la aplicación
+
+    ```bash
+    npm run dev
+    ```
+
+## DEPENDENCIAS ASOCIADAS
+
+### Iconos
+
+* <https://react-icons.github.io/react-icons/>

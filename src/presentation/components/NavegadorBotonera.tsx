@@ -2,6 +2,8 @@ import { DesktopOutlined, PaperClipOutlined, ReadOutlined, SearchOutlined } from
 import { Button, Col, Row } from 'antd';
 import { Link } from 'react-router-dom';
 
+
+
 export const NavegadorBotonera = () => {
     const buttonData = [
     {
@@ -31,6 +33,7 @@ export const NavegadorBotonera = () => {
   ];
   return (
     <Row justify="center" >
+      
       {buttonData.map((button) => (
         <Col span={24} xs={{ span: 12 }} md={{ span: 12 }} lg={{ span: 6 }} key={button.key} style={{ padding: 5 }}>
           <Link to={button.link}>
