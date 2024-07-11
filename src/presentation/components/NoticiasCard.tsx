@@ -9,9 +9,10 @@ interface NoticiasCardProps {
     img?: string;
     date?: string;
     to?: string;
+    id: number
   }
 
-export const NoticiasCard: React.FC<NoticiasCardProps> = ({ title = "Nota", descripcion = "...", img = "https://significado.com/wp-content/uploads/not.jpg", date = "??/??/????", to = "/noticias"}) => {
+export const NoticiasCard: React.FC<NoticiasCardProps> = ({ title = "Nota", descripcion = "...", img = "https://significado.com/wp-content/uploads/not.jpg", date = "??/??/????", to = "/noticias", id}) => {
   
   const navigate = useNavigate();
   return (
@@ -20,14 +21,16 @@ export const NoticiasCard: React.FC<NoticiasCardProps> = ({ title = "Nota", desc
 style={{marginTop: 20}}>
 <Flex justify="center" >
 <Card
-  onClick={ () => navigate(`${to}/${title}` )}
+  onClick={ () => navigate(`${to}/${id}` )}
   hoverable
-  style={{ width: 340, padding: 2, background: "#001529",borderRadius: 40 }}
-  cover={<img alt="imagen nota" src={img} style={{ width: '100%', height: 250, objectFit: 'cover', borderRadius: 40, padding:4}} />}
+  bordered={false}
+  style={{ width: 340, background: "#25415B",  borderRadius: 50}}
+  cover={<img alt="imagen nota" src={img} style={{ height: 250, objectFit: 'cover', borderTopLeftRadius: 40}} />}
 >
-  <Meta  title={<span style={{ color: '#d5e6ec' }}>{title}</span>} description={<span style={{ color: 'white' }}>{descripcion} </span>}style={{ height: 100}} />
+  <Meta  title={<span style={{ color: '#d5e6ec' }}>{title}</span>} description={<span style={{ color: '#E0E5E9' }}>{descripcion} </span>}style={{ height: 100}} />
   <Text italic strong type="secondary" ><span style={{ color: 'white' }}>Fecha: {date}</span></Text>
 </Card>
+
 </Flex>
 </Col>
    
