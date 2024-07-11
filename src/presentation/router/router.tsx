@@ -1,4 +1,4 @@
-import { Navigate, createBrowserRouter } from "react-router-dom";
+import { Navigate, createHashRouter } from "react-router-dom";
 import { ContactoPage } from "../pages/ContactoPage";
 import { LandingPage } from "../pages/LandingPage";
 import { SitiosEnlace } from "../pages/SitiosEnlace";
@@ -53,7 +53,7 @@ export const menuRoutes = [
   
 ]
 
-export const router = createBrowserRouter([
+export const router = createHashRouter([
   {
     path: "/",
     element: <AppLayout />,
