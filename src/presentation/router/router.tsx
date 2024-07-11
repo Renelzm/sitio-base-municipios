@@ -1,4 +1,4 @@
-import { Navigate, createHashRouter } from "react-router-dom";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import { ContactoPage } from "../pages/ContactoPage";
 import { LandingPage } from "../pages/LandingPage";
 import { SitiosEnlace } from "../pages/SitiosEnlace";
@@ -17,43 +17,43 @@ export const menuRoutes = [
   },
   {
     title: "Contacto",
-    path: "/contacto",
+    path: "contacto",
     element: <ContactoPage />,
   },
   {
     title: "Noticias",
-    path: "/noticias",
+    path: "noticias",
     element: <NoticiasPage />,
   },
   {
     title: "Sitios",
-    path: "/sitios",
+    path: "sitios",
     element: <SitiosEnlace />,
   },
   {
     title: "Trámites",
-    path: "/tramites",
+    path: "tramites",
     element: <TramitesPage />,
   },
   {
     title: "Transparencia",
-    path: "/transparencia",
+    path: "transparencia",
     element: <TransparenciaPage />,
   },
   {
     title: "Nosotros",
-    path: "/nosotros",
+    path: "nosotros",
     element: <NosotrosPage />,
   },
   {
     title: "Nota",
-    path: "/noticias/:id",
+    path: "noticias/:id",
     element: <NotaPage />,
   }
   
 ]
 
-export const router = createHashRouter([
+export const router = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
