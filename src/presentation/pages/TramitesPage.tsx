@@ -1,48 +1,67 @@
-import { FolderTwoTone, PlusCircleTwoTone, WalletTwoTone } from "@ant-design/icons";
+import { FolderOpenTwoTone, FolderTwoTone } from "@ant-design/icons";
 import {  Divider, Flex,  Tabs } from "antd";
 import type { TabsProps } from "antd";
 import Title from "antd/es/typography/Title";
-
 import { Grid } from 'antd';
 import { Tramite } from "../components/Tramite";
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebase";
+import { TopLevel } from "../../interfaces/tramitesInterface";
 
 const { useBreakpoint } = Grid;
+
+
 
 const onChange = (key: string) => {
   console.log(key);
 };
 
 
-
-const items: TabsProps["items"] = [
-  {
-    key: "1",
-    label: "Licencia de uso de suelo",
-    children: <Tramite />,
-    icon: <FolderTwoTone twoToneColor="#eb2f96" style={{ fontSize: "25px" }} />,
-    disabled: false,
-    
-  },
-  {
-    key: "2",
-    label: "Pago de predial",
-    children: <Tramite />,
-    icon: <WalletTwoTone twoToneColor="#eb2f96" style={{ fontSize: "25px" }} />,
-    disabled: true
-  },
-  {
-    key: "3",
-    label: "Tab 3",
-    children: "Content of Tab Pane 3",
-    icon: <PlusCircleTwoTone twoToneColor="#236487" style={{ fontSize: "25px" }}/>,
-    disabled: false
-  },
-];
-
+  
 export const TramitesPage = () => {
   const screens = useBreakpoint();
+  const [tramites, setTramite] = useState<TopLevel[]>([]);
+  const [activeKey, setActiveKey] = useState<string>("1");
 
 
+
+  useEffect(() => {
+  
+    const fetchData = async () => {
+      
+      const querySnapshot = await getDocs(collection(db, "tramites"));
+      console.log("Base de datos consultada");
+      const items = querySnapshot.docs.map((doc, index) => { 
+        const data = doc.data() as TopLevel;
+        return {
+          ...data,
+          key: (index + 1).toString(),
+          label: data.nombre,
+          children: <Tramite data={data}  />,
+        };
+      });
+ 
+    
+      setTramite(items);
+    };
+    fetchData();
+    
+  }, []);
+
+// <FolderOpenTwoTone />
+ const handleTabCange = (key: string) => {
+   setActiveKey(key);
+   onChange(key);
+ }
+
+ const getIcon = (key: string) => {
+  if (key === activeKey) {
+    return <FolderOpenTwoTone twoToneColor="#0ba391" style={{ fontSize: "25px" }} />;
+  } else {
+    return <FolderTwoTone twoToneColor="#eb2f96" style={{ fontSize: "25px" }} />;
+  }
+};
 
   return (
     <>
@@ -53,11 +72,15 @@ export const TramitesPage = () => {
 
       <Tabs
         defaultActiveKey="1"
-        items={items}
-        onChange={onChange}
+        items={tramites.map( (tramite) => ({
+          ...tramite,
+          icon: getIcon(tramite.key)
+        })) as TabsProps["items"]}
+        onChange={handleTabCange}
         tabPosition={ screens.xs ? "top" : "left"}
          type="card"
-         size="small"     
+         size="small"
+         
       />
     </>
   );

@@ -1,4 +1,6 @@
 import { Col, Image, Row, Typography } from "antd";
+// import { useSelector } from "react-redux";
+// import { RootState } from "../../store/store";
 
 const { Title } = Typography;
 
@@ -9,10 +11,13 @@ export const Logo = () => {
     img: "https://www.matamoroscoahuila.gob.mx/wp-content/uploads/2022/11/cropped-cropped-cropped-logo-GOBIERNOmpal-1024x277-1-1-e1691610713688-1.png",
   };
   
+  // const {nombreInstitucion} = useSelector((state: RootState) => state.municipal);
+
   return (
    
     <>
       <Row  style={{ flex: 1,  alignItems: 'center', justifyContent: 'center', background: "#001529"}}>
+  
         <Col span={24} 
          style={{ color: "white", textAlign: "center" , marginTop: 12}}
         >

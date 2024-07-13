@@ -63,7 +63,7 @@ export const MenuBar = () => {
     <Menu
       theme="dark"
       mode="horizontal"
-      selectedKeys={[selectedKey]}
+  
       items={menuData.map(item => ({
         ...item,
         style: {

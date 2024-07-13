@@ -1,4 +1,4 @@
-import {  Image } from "antd";
+import {  Col, Image, Row } from "antd";
 import Title from "antd/es/typography/Title"
 import parse from 'html-react-parser';
 
@@ -17,8 +17,16 @@ export const NotaCompleta: React.FC<NotaCompletaProps>= ({titulo, img, contenido
       width={"80%"}
       src={img}
     />
-  
+    <Col >
+    <Row justify="center">
     {parse(contenido)}
+
+    </Row>
+     
+
+    </Col>
+   
+ 
 
      
     </>

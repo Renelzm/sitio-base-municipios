@@ -25,3 +25,8 @@
 @keyframes l17 { 
   100%{transform: rotate(1turn)}
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}

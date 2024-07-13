@@ -1,4 +1,4 @@
-import { Row } from "antd";
+import {  Row } from "antd";
 import { collection, getDocs, query, where  } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -33,8 +33,9 @@ export const NotaPage = () => {
  
 
   return (
-    <>
+
       <Row justify="center">
+        
      {  data
       ? <NotaCompleta titulo={data.titulo} img = {data.imagen} contenido = {data.contenido}/>
       : (<div className="loader"></div>)
@@ -45,7 +46,6 @@ export const NotaPage = () => {
           
         
       </Row>
-  
-    </>
+ 
   );
 };

@@ -1,84 +1,111 @@
-import { Button, Col, QRCode, Row, Space } from "antd";
+import {
+  Button,
+  Col,
+  QRCode,
+  Row,
+  Space,
+  Typography,
+  List,
+  Divider,
+} from "antd";
 import Title from "antd/es/typography/Title";
+import { TramiteProps } from "../../interfaces/tramitesInterface";
+import { DownloadOutlined } from "@ant-design/icons";
 
-export const Tramite = () => {
+const { Text } = Typography;
+
+export const Tramite: React.FC<TramiteProps> = ({ data }) => {
+
   return (
     <>
       <Row justify="center" align="middle">
-        <Col
-          span={12}
-          xs={{ span: 24 }}
-          md={{ span: 12 }}
-          lg={{ span: 12 }}
-          xl={{ span: 8 }}
-          xxl={{ span: 6 }}
-          style={{ textAlign: "left" }}
-        >
-          <Title level={2}>Liciencia de uso de suelo:</Title>
-          <h3>Descripción:</h3>
-          <p>
-            Liciencia de uso de suelo tramitado por el departamento de
-            urbanismos
-          </p>
+        <Col span={24} style={{ textAlign: "left" }}>
+          <Col span={24} style={{ textAlign: "left" }}>
+            <Title level={2}>{data.nombre}</Title>
+            <Text type="secondary">
+              Unidad Administrativa: {data.unidad_administrativa}
+            </Text>
+            <br />
+            <Text type="secondary">Clave: {data.clave}</Text>
+          </Col>
+          <Divider orientation="left">Descripción</Divider>
 
-          <p>Requisitos:</p>
+          <Text>{data.descripcion}</Text>
+          <Divider orientation="left">Costo</Divider>
 
-          <ol>
-            <li>Costo de la licencia</li>
-            <li>Uso de suelo</li>
-          </ol>
-        </Col>
-        <Col
-          span={12}
-          xs={{ span: 24 }}
-          md={{ span: 12 }}
-          lg={{ span: 12 }}
-          xl={{ span: 8 }}
-          xxl={{ span: 6 }}
-          style={{ textAlign: "center" }}
-        >
-          <Title level={3}>Código QR</Title>
-          <Space direction="vertical" align="center">
-            <QRCode value={"https://www.seacoahuila.org.mx/"} />
-          </Space>
-          <Title level={3}>Documento para acreditar ..</Title>
-          <Button type="primary">Descargar</Button>
+          <Text>{data.costo}</Text>
+
+          <Divider orientation="left"> Datos Generales</Divider>
+
+          <Col style={{}}>
+            <Text strong>Duración: </Text> <Text>{data.duracion}</Text> <br />
+            <Text strong>Tipo:</Text>{" "}
+            <Text>{data.presencial ? "Presencial" : "En linea"}</Text> <br />
+            <Text strong>Quien puede solicitarlo:</Text>{" "}
+            <Text>{data.puede_solicitar}</Text> <br />
+            <Text strong>Vigencia:</Text> <Text>{data.vigencia}</Text> <br />
+          </Col>
+
+          <List
+            style={{ marginTop: "10px", padding: 10 }}
+            dataSource={data.procedimiento}
+            size="small"
+            bordered
+            header={
+              <Text strong style={{ color: "#408080" }}>
+                Procedimiento:
+              </Text>
+            }
+            renderItem={(item, index) => (
+              <List.Item key={index}>
+                <Typography.Text>{index + 1} - </Typography.Text> {item}
+              </List.Item>
+            )}
+          ></List>
+
+          <List
+            style={{ marginTop: "10px", padding: 10 }}
+            dataSource={data.requisitos}
+            size="small"
+            bordered
+            header={
+              <Text strong type="warning" underline>
+                Requisitos:
+              </Text>
+            }
+            renderItem={(item, index) => (
+              <List.Item key={index}>
+                <Typography.Text>{index + 1} - </Typography.Text> {item}
+              </List.Item>
+            )}
+          ></List>
         </Col>
 
-        <Col
-          span={12}
-          xs={{ span: 24 }}
-          md={{ span: 12 }}
-          lg={{ span: 12 }}
-          xl={{ span: 8 }}
-          xxl={{ span: 6 }}
-          style={{ textAlign: "center" }}
-        >
-          <Title level={3}>Código QR</Title>
-          <Space direction="vertical" align="center">
-            <QRCode value={"https://www.seacoahuila.org.mx/"} />
-          </Space>
-          <Title level={3}>Licencia de ...</Title>
-          <Button type="primary">Descargar</Button>
-        </Col>
-        <Col
-          span={12}
-          xs={{ span: 24 }}
-          md={{ span: 12 }}
-          lg={{ span: 12 }}
-          xl={{ span: 8 }}
-          xxl={{ span: 6 }}
-          style={{ textAlign: "center" }}
-        >
-          <Title level={3}>Código QR</Title>
-          <Space direction="vertical" align="center">
-            <QRCode value={"https://www.seacoahuila.org.mx/"} />
-          </Space>
-          <Title level={3}>
-            Constancia de elementos para acreditar uso general
-          </Title>
-          <Button type="primary">Descargar</Button>
-        </Col>
+        {data.descargas.map((descarga, index) => (
+          
+          <Col
+            key={index}
+            span={12}
+            xs={{ span: 24 }}
+            md={{ span: 12 }}
+            lg={{ span: 8 }}
+            xl={{ span: 8 }}
+            xxl={{ span: 8}}
+            style={{ textAlign: "center" }}
+          >
+            <Title level={5}>{descarga.nombre}</Title>
+       
+            <Text >Escanear código QR</Text><br />
+            <Space direction="vertical" align="center">
+              <QRCode value={descarga.url} />
+            </Space> <br />
+            <Button ghost  type="primary" shape="round" icon={<DownloadOutlined />} onClick={() =>window.location.href = descarga.url } > Descargar</Button>
+           
+          
+          </Col>
+       
+        ))}
+
       </Row>
     </>
   );
