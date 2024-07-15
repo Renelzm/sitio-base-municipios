@@ -19,7 +19,7 @@ export const NotaCompleta: React.FC<NotaCompletaProps>= ({titulo, img, contenido
     />
     <Col >
     <Row justify="center">
-    {parse(contenido)}
+    {typeof contenido === 'string' ? parse(contenido) : 'Invalid content format'}
 
     </Row>
      

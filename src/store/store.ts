@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import {municipalSlice} from './slices/municipalSlice.ts'
-import {tramitesSlice} from './slices/tramitesSlice.ts'
-import { noticiasSlice } from './slices/noticiasSlice.ts'
+import {tramitesSlice} from './slices/tramitesSlice'
+import { noticiasSlice } from './slices/noticiasSlice'
 
 // Redux store
 

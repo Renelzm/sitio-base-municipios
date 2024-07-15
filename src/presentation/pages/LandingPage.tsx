@@ -1,4 +1,8 @@
+
+import { Row } from "antd"
 import { Carrousel } from "../components/Carrousel"
+import { Fotogaleria } from "../components/Fotogaleria"
+
 
 
 export const LandingPage = () => {
@@ -10,16 +14,16 @@ export const LandingPage = () => {
         {
           url: "https://www.cpccoahuila.org.mx/_nuxt/img/banner-iniciativa.c23be4d.jpg"
         }
-        ,
-        {
-          url: "https://firebasestorage.googleapis.com/v0/b/transparenciaseac.appspot.com/o/pagina_web%2FbannerDibujaTusValores2023.jpeg?alt=media&token=d27126e2-e7a1-4f42-a847-9d070d958398"
-        }
+      
     ]
   return (
     <>
     
+   
+    <Row justify="center" >
     <Carrousel bannersData = {setBanners}/>
-    
+    <Fotogaleria/>
+    </Row>
     </>
   )
 }
