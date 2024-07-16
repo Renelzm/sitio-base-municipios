@@ -1,11 +1,11 @@
 import "../../App.css";
 import { Layout, theme } from "antd";
-
-import { MenuBar } from "../components/MenuBar";
 import { Outlet } from "react-router-dom";
-import { Logo } from "../components/Logo";
-import { NavegadorBotonera } from "../components/NavegadorBotonera";
-const { Header, Content, Footer } = Layout;
+import { Logo, NavegadorBotonera, MenuBar } from "../components/landingPage/";
+import { FooterComponent } from "../components/landingPage/FooterComponent";
+
+
+const { Header, Content } = Layout;
 
 function AppLayout() {
   // const [count, setCount] = useState(0)
@@ -33,9 +33,7 @@ function AppLayout() {
           <Outlet />
         </div>
       </Content>
-      <Footer style={{ textAlign: "center" }}>
-        ©{new Date().getFullYear()} SEAC - USI
-      </Footer>
+          <FooterComponent/>
     </Layout>
   );
 }

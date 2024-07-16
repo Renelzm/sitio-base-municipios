@@ -1,0 +1,5 @@
+export * from './Logo'
+export * from './NavegadorBotonera'
+export * from './MenuBar'
+export * from './Carrousel'
+export * from './Fotogaleria'

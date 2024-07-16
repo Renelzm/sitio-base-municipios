@@ -1,7 +1,5 @@
-
 import { Row } from "antd"
-import { Carrousel } from "../components/Carrousel"
-import { Fotogaleria } from "../components/Fotogaleria"
+import { Fotogaleria, Carrousel } from "../components/landingPage"
 
 
 
