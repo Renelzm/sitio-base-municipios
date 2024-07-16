@@ -1,6 +1,6 @@
 
 import { Layout, Row, Col, Typography } from 'antd';
-import {Helmet} from "react-helmet";
+// import {Helmet} from "react-helmet";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { LatLngExpression } from 'leaflet';
@@ -12,19 +12,19 @@ const {  Footer } = Layout;
 
 export const FooterComponent = () => {
     const centerCoordinates: LatLngExpression = [25.528049,-103.2305507];
-    const markerCoordinates: LatLngExpression = [25.528049,-103.2305507];
+    // const markerCoordinates: LatLngExpression = [25.528049,-103.2305507];
   
     return (
       <Footer style={{ backgroundColor: '#001529', color: 'white', padding: '40px', marginTop: 40}}>
          
-        <Helmet>
+        {/* <Helmet>
           <link
             rel="stylesheet"
             href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
             integrity="sha384-xodZBNTC5n17Xt2JyDBaSM1ykpDydk7KR4e1o0hyBD1f1F0Q6wE6wr5Kwl9UYNfi"
             crossOrigin=""
           />
-        </Helmet>
+        </Helmet> */}
       
         <Row gutter={[16, 16]} justify="center">
         
@@ -53,11 +53,11 @@ export const FooterComponent = () => {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               />
-              <Marker position={markerCoordinates}>
+              {/* <Marker position={markerCoordinates}>
                 <Popup>
                   Aquí estamos.
                 </Popup>
-              </Marker>
+              </Marker> */}
             </MapContainer>
           </Col>
           <Col xs={24} sm={12} md={6}>
