@@ -35,25 +35,27 @@ Esta aplicación esta diseñada con React y Vite, con la finalidad de servir com
 
 - <https://react-icons.github.io/react-icons/>
 
+## MODULOS
+
+- Home page
+- Noticias
+- Trasparencia
+- Tramites
+- Sitios Turisticos
+- Seguridad y bienestar
+
+### DATOS ADICIONALES
+
+- Contacto
+- Sitios de Interes
+- Ubicacion Geografica
+- Redes Sociales
+
 ## SEED DATOS
 
-1. banners: {
-    "url" : "www.... (imagen )",
-    "to" : "www.."
-    }
-2. fotoGaleria: {
-   "src" : "url imagen"
-}
+1. banners: "url" , "to"  
+2. fotoGaleria: "src" : "url imagen"
 3. notas : (Revisar notasInterface)
 4. Tramite : (Revisar Tramite interface)
-5. Seguridad :   {
-        title: 'Policía',
-        description: 'Contacto con la policía municipal para emergencias y reportes.',
-        contact: '911',
-        img: 'https://paginacentral.com.mx/wp-content/uploads/2019/12/polici%CC%81a-estatal-confiable-guanajuato.jpeg'
-        }
-6. Sitios:
-   name: 'Museo del Desierto',
-    description: 'Un lugar lleno de historia y cultura.',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/Museo_del_Desierto%2C_Saltillo%2C_Coahuila.jpg',
-    features: ['Histórico', 'Educativo', 'Familiar']
+5. Seguridad : title, description, contact, img
+6. Sitios: name, description, image, features[]

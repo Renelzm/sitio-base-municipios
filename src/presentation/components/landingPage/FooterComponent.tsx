@@ -1,6 +1,6 @@
 
 import { Layout, Row, Col, Typography } from 'antd';
-
+import {Helmet} from "react-helmet";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { LatLngExpression } from 'leaflet';
@@ -17,7 +17,7 @@ export const FooterComponent = () => {
     return (
       <Footer style={{ backgroundColor: '#001529', color: 'white', padding: '40px', marginTop: 40}}>
          
-        {/* <Helmet>
+        <Helmet>
           <link
             rel="stylesheet"
             href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
@@ -25,7 +25,7 @@ export const FooterComponent = () => {
             crossOrigin=""
           />
         </Helmet>
-       */}
+      
         <Row gutter={[16, 16]} justify="center">
         
           <Col xs={24} sm={12} md={6} style={{textAlign: "center"}}>
