@@ -8,6 +8,7 @@ import { TransparenciaPage } from "../pages/TransparenciaPage";
 import AppLayout from "../layouts/AppLayout";
 import { NosotrosPage } from "../pages/NosotrosPage";
 import { NotaPage } from "../pages/NotaPage";
+import { SeguridadPage } from "../pages/SeguridadPage";
 
 export const menuRoutes = [
   {
@@ -49,6 +50,11 @@ export const menuRoutes = [
     title: "Nota",
     path: "noticias/:id",
     element: <NotaPage />,
+  },
+  {
+    title: "Seguridad y Bienestar",
+    path: "seguridad",
+    element: <SeguridadPage />,
   }
   
 ]

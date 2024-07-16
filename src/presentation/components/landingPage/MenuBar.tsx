@@ -12,7 +12,7 @@ const menuData = [
         className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
       >
         <HomeOutlined style={{ fontSize: '20px', color: 'white', marginRight: '10px' }} />
-        Home
+        Inicio
       </NavLink>
     )
   },
@@ -28,27 +28,27 @@ const menuData = [
     )
   },
   {
-    key: "/noticias",
+    key: "/Seguridad",
     label: (
       <NavLink
-        to="/noticias"
+        to="/Seguridad"
         className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
       >
-        Quienes somos
+        Seguridad y Bienestar
       </NavLink>
     )
   },
-  {
-    key: "/contacto",
-    label: (
-      <NavLink
-        to="/contacto"
-        className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
-      >
-        Contacto
-      </NavLink>
-    )
-  }
+  // {
+  //   key: "/contacto",
+  //   label: (
+  //     <NavLink
+  //       to="/contacto"
+  //       className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}
+  //     >
+  //       Contacto
+  //     </NavLink>
+  //   )
+  // }
 ];
 
 export const MenuBar = () => {

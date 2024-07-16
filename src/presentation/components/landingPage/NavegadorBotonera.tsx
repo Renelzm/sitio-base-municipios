@@ -1,5 +1,10 @@
-import { DesktopOutlined, PaperClipOutlined, ReadOutlined, SearchOutlined } from "@ant-design/icons";
+
 import { Button, Col, Row } from 'antd';
+import { BsNewspaper } from "react-icons/bs";
+import { FcLandscape, FcSearch  } from "react-icons/fc";
+import { IoQrCodeOutline } from "react-icons/io5";
+
+
 import { Link } from 'react-router-dom';
 
 
@@ -9,25 +14,25 @@ export const NavegadorBotonera = () => {
     {
       key: "1",
       label: "Noticias",
-      icon: <ReadOutlined />,
+      icon: <BsNewspaper size="30" color="#008591"/>,
       link: "/noticias"
     },
     {
       key: "2",
       label: "Trámites",
-      icon: <PaperClipOutlined />,
+      icon: <IoQrCodeOutline  size="30" color="orange"/>,
       link: "/tramites"
     },
     {
       key: "3",
       label: "Transparencia",
-      icon: <SearchOutlined />,
+      icon: <FcSearch size="30" />,
       link: "/transparencia"
     },
     {
       key: "4",
-      label: "Sitios de interes",
-      icon: <DesktopOutlined />,
+      label: "Sitios",
+      icon: <FcLandscape size="30"/>,
       link: "/sitios"
     },
   ];

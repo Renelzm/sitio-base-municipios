@@ -8,7 +8,11 @@ Esta aplicación esta diseñada con React y Vite, con la finalidad de servir com
 
 - Logotipo de la institución
 - Proporcionar o crear correo de  gmail de la institución
-- Nombre completo y oficial de la institución
+- Nombre completo y oficial de la institución.
+- Telefonos de contacto.
+- Redes Sociales (Facebook, Instagram, Twitter) si cuentan con ellas.
+- Contacto para: Conteniudo de notas y banners, contenido de transpoarencia, contenido de tramites.
+- Correo para OIC buzon quejas y denuncias.
 
 ## Pasos de instalación
 

@@ -16,6 +16,7 @@ export const FooterComponent = () => {
   
     return (
       <Footer style={{ backgroundColor: '#001529', color: 'white', padding: '40px', marginTop: 40}}>
+         
         <Helmet>
           <link
             rel="stylesheet"
@@ -24,21 +25,9 @@ export const FooterComponent = () => {
             crossOrigin=""
           />
         </Helmet>
+      
         <Row gutter={[16, 16]} justify="center">
-        <Col xs={24} sm={12} md={6}>
-            <Title level={3} style={{ color: 'white' }}>Mapa</Title>
-            <MapContainer center={centerCoordinates} zoom={13} style={{ height: '300px', width: '100%' }}>
-              <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              />
-              <Marker position={markerCoordinates}>
-                <Popup>
-                  Aquí estamos.
-                </Popup>
-              </Marker>
-            </MapContainer>
-          </Col>
+        
           <Col xs={24} sm={12} md={6} style={{textAlign: "center"}}>
             <Title level={3} style={{ color: 'white' }}>Contacto</Title>
             <Text style={{ color: 'white' }}>Teléfono: +1 234 567 890</Text>
@@ -56,6 +45,20 @@ export const FooterComponent = () => {
             <Text style={{ color: 'white' }}>Twitter: <a href="https://twitter.com" style={{ color: 'white' }}>twitter.com/gobierno</a></Text>
             <br />
             <Text style={{ color: 'white' }}>Instagram: <a href="https://instagram.com" style={{ color: 'white' }}>instagram.com/gobierno</a></Text>
+          </Col>
+          <Col xs={24} sm={12} md={6}>
+            <Title level={3} style={{ color: 'white' }}>Mapa</Title>
+            <MapContainer center={centerCoordinates} zoom={13} style={{ height: '200px', width: '100%' }}>
+              <TileLayer
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+              />
+              <Marker position={markerCoordinates}>
+                <Popup>
+                  Aquí estamos.
+                </Popup>
+              </Marker>
+            </MapContainer>
           </Col>
           <Col xs={24} sm={12} md={6}>
 
