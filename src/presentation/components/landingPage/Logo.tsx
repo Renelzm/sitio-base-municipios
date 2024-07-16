@@ -1,17 +1,14 @@
 import { Col, Image, Row, Typography } from "antd";
-// import { useSelector } from "react-redux";
-// import { RootState } from "../../store/store";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../store/store";
+
 
 const { Title } = Typography;
 
 export const Logo = () => {
 
-  const data = {
-    name: "Municipio de Matamoros Coahuila",
-    img: "https://www.matamoroscoahuila.gob.mx/wp-content/uploads/2022/11/cropped-cropped-cropped-logo-GOBIERNOmpal-1024x277-1-1-e1691610713688-1.png",
-  };
-  
-  // const {nombreInstitucion} = useSelector((state: RootState) => state.municipal);
+
+  const {nombreInstitucion, logoUrl} = useSelector((state: RootState) => state.municipal);
 
   return (
    
@@ -23,13 +20,13 @@ export const Logo = () => {
         >
           <Image
             width={200}
-            src={data.img}
+            src={logoUrl}
           />
           <Title 
           style={{ color: "white", marginLeft: 12, textAlign: "center" }}
           level={1}
           >
-            {data.name}
+            {nombreInstitucion}
           </Title>
         </Col>
       </Row>

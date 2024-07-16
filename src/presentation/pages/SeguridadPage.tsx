@@ -1,5 +1,7 @@
+
+import Title from "antd/es/typography/Title";
 import { SeguridadCard } from "../components/SeguridadCard"
-import { Row } from 'antd';
+import { Divider, Flex, Row } from 'antd';
 const seguridadData = [
     {
         title: 'Policía',
@@ -29,8 +31,13 @@ const seguridadData = [
 
 export const SeguridadPage = () => {
   return (
-    <>
+    <>  
 
+<Flex justify="center">
+        <Title level={1}>Seguridad y Bienestar</Title>
+        {/* {isLoading && <div className="loader"></div>} */}
+      </Flex>
+      <Divider >Sitios de apoyo y emergencia</Divider>
 
     <Row gutter={[16, 16]} justify="center">
             {seguridadData.map((item, index) => (

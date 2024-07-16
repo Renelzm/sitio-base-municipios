@@ -1,4 +1,6 @@
+import { Divider, Flex } from "antd";
 import { SitiosLocalesCard } from "../components/SitiosLocalesCard"
+import Title from "antd/es/typography/Title";
 
 const places = [
   {
@@ -18,7 +20,11 @@ const places = [
 export const SitiosEnlace = () => {
   return (
     <>
-    
+    <Flex justify="center">
+        <Title level={1}>Conoce nuestro municipio </Title>
+        {/* {isLoading && <div className="loader"></div>} */}
+      </Flex>
+      <Divider ></Divider>
     {places.map((place, index) => (
         <SitiosLocalesCard key={index} place={place} />
       ))}

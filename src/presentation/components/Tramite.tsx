@@ -84,6 +84,7 @@ export const Tramite: React.FC<TramiteProps> = ({ data }) => {
         {data.descargas.map((descarga, index) => (
           
           <Col
+          
             key={index}
             span={12}
             xs={{ span: 24 }}
@@ -99,7 +100,9 @@ export const Tramite: React.FC<TramiteProps> = ({ data }) => {
             <Space direction="vertical" align="center">
               <QRCode value={descarga.url} />
             </Space> <br />
-            <Button ghost  type="primary" shape="round" icon={<DownloadOutlined />} onClick={() =>window.location.href = descarga.url } > Descargar</Button>
+            <Button 
+            style={{ marginTop: "10px" }}
+            ghost  type="primary" shape="round" icon={<DownloadOutlined />} onClick={() =>window.location.href = descarga.url } > Ir / Descargar</Button>
            
           
           </Col>

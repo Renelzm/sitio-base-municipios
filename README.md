@@ -13,6 +13,7 @@ Esta aplicación esta diseñada con React y Vite, con la finalidad de servir com
 - Redes Sociales (Facebook, Instagram, Twitter) si cuentan con ellas.
 - Contacto para: Conteniudo de notas y banners, contenido de transpoarencia, contenido de tramites.
 - Correo para OIC buzon quejas y denuncias.
+- Ubicación geografica en el mapa
 
 ## Pasos de instalación
 
@@ -40,7 +41,7 @@ Esta aplicación esta diseñada con React y Vite, con la finalidad de servir com
 - Home page
 - Noticias
 - Trasparencia
-- Tramites
+- Tramites (Con generación de cógigos qr por cada enlace y documento)
 - Sitios Turisticos
 - Seguridad y bienestar
 
