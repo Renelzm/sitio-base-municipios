@@ -1,7 +1,7 @@
 
 import { Layout, Row, Col, Typography } from 'antd';
 // import {Helmet} from "react-helmet";
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { LatLngExpression } from 'leaflet';
 import { Image } from 'antd';
