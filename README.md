@@ -30,7 +30,49 @@ Esta aplicación esta diseñada con React y Vite, con la finalidad de servir com
     npm run dev
     ```
 
-## DEPENDENCIAS ASOCIADAS
+## DATOS INICIALES DE LA APLICACION
+
+src\store\slices\municipalSlice.ts
+
+- nombreInstitucion: '',
+- logoUrl: "",
+- email: '',
+- telefono: '',
+- direccion: "",
+- habitantes: number,
+- redesSociales:
+  - facebook: '',
+  - twitter: '',
+  - instagram: '',
+- sitiosInteres:
+   [
+  - id: "",
+  - nombre '',
+  - url: '',
+  - logo: ''
+        ],
+- banners: [
+  - to: '',
+  - url: ''
+        ],
+- fotoGaleria: [
+  - src:''
+  ]
+- lugaresTuristicos: [
+  - name: '',
+  - description: '',
+  - image: '',
+  - features: [],
+        ],
+
+- seguridadData: [
+  - title: '',
+  - description: '',
+  - contact: '',
+  - img: ''
+        ],
+
+Tomar en cuenta los datos de localizacion del mapa
 
 ### Iconos
 
