@@ -2,7 +2,7 @@
 
 ## PARA ENTIDADES MUNICIPALES SIN WEB OFFICIAL
 
-Esta aplicación esta diseñada con React y Vite, con la finalidad de servir como sitio base para todas las entidades que no cuenten con equipamiento ni infraestructura para albergar sus sitios web.
+Esta aplicación esta diseñada con React y Vite, con la finalidad de servir como sitio base para todas las entidades que no cuenten con equipamiento ni infraestructura para albergar sus sitios web..
 
 ### Requerimientos iniciales
 
