@@ -36,6 +36,7 @@ export const TramitesPage = () => {
     const fetchData = async () => {
       const items = data.map((doc) => {
         const data = doc as TopLevel;
+        console.log()
         return {
           ...data,
           children: <Tramite data={data} />,

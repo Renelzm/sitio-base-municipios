@@ -9,8 +9,9 @@ export const getTramites = () => {
     return async (dispatch: Dispatch) => {
         dispatch(startLoadingTramites());
         const querySnapshot = await getDocs(collection(db, "tramites"));
-      
+    
         const items = querySnapshot.docs.map((doc, index) => { 
+      
           const data = doc.data() as TopLevel;
           return {
             ...data,
