@@ -61,7 +61,7 @@ export const municipalSlice = createSlice({
       {
         "id": "seac",
         "nombre": "Sistema Estatal Anticorrupción",
-        "url": "https://seacoahuila.org.mx/",
+        "url": "https://www.seacoahuila.org.mx/",
         "logo": "https://firebasestorage.googleapis.com/v0/b/transparenciaseac.appspot.com/o/logos_instituciones%2Fseac_white.png?alt=media&token=8de71a66-f514-4b7b-a5ee-4618679f6576"
       },
       {
